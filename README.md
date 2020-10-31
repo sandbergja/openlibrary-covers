@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-    require 'openlibrary-covers'
+    require 'openlibrary/covers'
     image = Openlibrary::Covers::Image.new '9780786965601'
     image.found? # => true
     image.url # => "http://covers.openlibrary.org/b/isbn/9780786965601-M.jpg"
