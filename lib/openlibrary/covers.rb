@@ -56,7 +56,7 @@ module Openlibrary
           Net::HTTP.start(openlibrary_domain, openlibrary_port) do |http|
             response = http.head(openlibrary_path(identifier, :S, default_behavior: false))
           end
-        rescue Errno::ECONNREFUSED
+        rescue Errno::ECONNREFUSED, SocketError
           return false
         end
         return true if %w[200 301 302].include? response.code
